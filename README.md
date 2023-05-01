@@ -42,21 +42,81 @@ Step 6:Close the Android project.
  ```
 /*
 Program to Develop an application that uses Font Size using Android Studio .
-Developed by: 
-RegisterNumber:  
+Developed by: Pranave B
+RegisterNumber: 212221240040
 */
 ```
 
 ## MainActivity.java:
+```
+package com.example.myapplication;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 
+public class MainActivity extends AppCompatActivity {
+    float font = 24;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        final TextView t1 = (TextView)findViewById(R.id.textView1);
+        Button b1 = (Button)findViewById(R.id.button1);
+        b1.setOnClickListener(new View.OnClickListener()    {
+            public void onClick(View view) {
+                t1.setTextSize(font);
+                font = font+4;
+                if(font==40)
+                    font = 20;
+            }
+        });
 
+    }
+}
+```
 ## activity_main.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="70dp"
+        android:gravity="center"
+        android:text="@string/hello_world"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:gravity="center"
+        android:text="@string/change_font_size"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+
+</RelativeLayout>
+```
 ## Output:
-
+![image1](https://user-images.githubusercontent.com/94165168/235467204-c3bbdd37-9e36-4a70-9e3c-cae668b38915.jpg)
+![image2](https://user-images.githubusercontent.com/94165168/235467255-e6751067-e330-4f9e-986b-38ec67dcdc9c.jpg)
 
 
 ## Result:
